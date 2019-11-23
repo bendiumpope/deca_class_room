@@ -14,5 +14,12 @@
     <string name="app_verification_stack_error">Stack is required</string>
     <string name="app_verification_code_error">Code is required</string>
     <string name="app_choose_stack">Choose Stack</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.example.decaclassroom
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -7,6 +8,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_verification.*
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -31,7 +33,7 @@ class RegisterActivity : AppCompatActivity() {
         Email.setText("")
         val emailPattern = ("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+").toRegex()
 
-        button.setOnClickListener {
+        buttonReg.setOnClickListener {
             var email = Email.text.toString()
 
             if(email.isEmpty()){
@@ -40,7 +42,9 @@ class RegisterActivity : AppCompatActivity() {
             }else if(email.trim().matches(emailPattern)){
                 error_message2.visibility = View.GONE
                 error_message.visibility = View.GONE
-                Toast.makeText(applicationContext,"valid email address", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, VerificationActivity::class.java)
+
+                startActivity(intent)
 
             }else{
                 Email.setBackgroundResource(R.drawable.error_drawable)
@@ -48,5 +52,14 @@ class RegisterActivity : AppCompatActivity() {
                 error_message.visibility = View.VISIBLE
             }
         }
+
+        profile_image1.setOnClickListener{ view ->
+
+            val intent = Intent(this, GetStartedActivity::class.java)
+
+            startActivity(intent)
+
+        }
+
     }
 }

@@ -13,13 +13,14 @@
         android:contentDescription="view_background"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_verificationbg"
+        tools:ignore="VectorDrawableCompat"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="62dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:elevation="100dp"
@@ -28,7 +29,8 @@
         app:civ_border_width="2dp"
         app:civ_circle_background_color="@color/boxShadowsColor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/textView"
@@ -57,7 +59,7 @@
         android:textColor="@color/fontColorLight"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -112,13 +114,14 @@
 
     <Button
         android:id="@+id/button"
-        android:background="@drawable/button_darkgreen"
         android:layout_width="197dp"
         android:layout_height="55dp"
         android:layout_marginStart="124dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/button_darkgreen"
         android:gravity="center"
         android:text="Submit"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -128,10 +131,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="12dp"
+        android:elevation="60dp"
+        android:src="@drawable/ic_key_down"
         app:layout_constraintBottom_toBottomOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="@+id/spinner"
-        android:src="@drawable/ic_key_down"
-        android:elevation="60dp"/>
+        tools:ignore="VectorDrawableCompat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,12 +12,12 @@
         android:layout_height="match_parent"
         android:contentDescription="view_background"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_registerbg"
+        app:srcCompat ="@drawable/ic_registerbg"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/profile_image1"
         android:layout_width="62dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
@@ -28,7 +28,8 @@
         app:civ_border_width="2dp"
         app:civ_circle_background_color="@color/boxShadowsColor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VectorDrawableCompat" />
 
     <EditText
         android:id="@+id/Email"
@@ -108,14 +109,14 @@
         app:layout_constraintTop_toBottomOf="@id/Email" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonReg"
         android:layout_width="221dp"
         android:layout_height="49dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="36dp"
         android:layout_marginRight="92dp"
         android:background="@drawable/button_darkgreen"
-        android:text="Button"
+        android:text="Register"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"

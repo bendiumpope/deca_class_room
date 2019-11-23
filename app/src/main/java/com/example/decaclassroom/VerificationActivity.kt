@@ -1,11 +1,13 @@
 package com.example.decaclassroom
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
+import kotlinx.android.synthetic.main.activity_verification.*
 
 class VerificationActivity : AppCompatActivity() {
     lateinit var option: Spinner
@@ -26,7 +28,7 @@ class VerificationActivity : AppCompatActivity() {
 
         val stacks = arrayOf("Choose Stack", "Nodejs", "C#", "Android", "Python")
 
-        option.adapter= ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,stacks)
+        option.adapter=ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,stacks)
 
         option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -44,21 +46,30 @@ class VerificationActivity : AppCompatActivity() {
                     error1.visibility= View.GONE
                     option.setBackgroundResource(R.drawable.input_drawable)
                 }
+
+
                 button.setOnClickListener{ view ->
 
-                    if(stacks.get(position)=="Choose Stack"){
+                    if(stacks.get(position)=="Choose Stack" && edit.text.isEmpty()){
                         error1.visibility= View.VISIBLE
                         option.setBackgroundResource(R.drawable.error_drawable)
+                        error2.visibility= View.VISIBLE
+                        edit.setBackgroundResource(R.drawable.error_drawable)
+
+                    }else if(stacks.get(position)=="Choose Stack"){
+                        error1.visibility= View.VISIBLE
+                        option.setBackgroundResource(R.drawable.error_drawable)
+
+                    }else if(edit.text.isEmpty()){
+
+                    error2.visibility= View.VISIBLE
+                    edit.setBackgroundResource(R.drawable.error_drawable)
+
                     }else{
 
                         error1.visibility= View.GONE
-                    }
-
-                    if(edit.text.isEmpty()){
-                        error2.visibility= View.VISIBLE
-                        edit.setBackgroundResource(R.drawable.error_drawable)
-                    }else{
                         error2.visibility = View.GONE
+
                     }
                 }
 
@@ -74,5 +85,14 @@ class VerificationActivity : AppCompatActivity() {
                 })
             }
         }
+
+        profile_image.setOnClickListener{ view ->
+
+                val intent = Intent(this, RegisterActivity::class.java)
+
+                startActivity(intent)
+
+        }
+
     }
 }
