@@ -28,7 +28,7 @@ class VerificationActivity : AppCompatActivity() {
 
         val stacks = arrayOf("Choose Stack", "Nodejs", "C#", "Android", "Python")
 
-        option.adapter=ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,stacks)
+        option.adapter =ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,stacks)
 
         option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -69,6 +69,10 @@ class VerificationActivity : AppCompatActivity() {
 
                         error1.visibility= View.GONE
                         error2.visibility = View.GONE
+
+                        val intent = Intent(this@VerificationActivity, MainActivity::class.java)
+
+                        startActivity(intent)
 
                     }
                 }

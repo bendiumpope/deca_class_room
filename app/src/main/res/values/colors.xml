@@ -7,6 +7,7 @@
     <color name="darkFontColor">#2d2f48</color>
     <color name="fontColorLight">#898989</color>
     <color name="errorColor">#F57557</color>
+    <color name="profileColor">#F7F7F7</color>
     <color name="btnSubmit">#B3CD43</color>
     <color name="boxShadowsColor">#FBFBFD</color>
     <color name="boxShadowDark">#B5B3CA</color>
@@ -15,4 +16,7 @@
     <color name="secondaryColor">#368C4C</color>
     <color name="mainFragmentColor">#F0F0F0</color>
     <color name="grayColor">#707070</color>
+    <color name="searchColor">#2D946E</color>
+    <color name="activeColor">#30A24E</color>
+
 </resources>

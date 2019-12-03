@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/articleDateColor"
-    tools:context=".ResourceFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/profileColor"
+    android:orientation="vertical">
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/search_resource"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/search_drawable"
+            android:hint="Search..."
+            android:padding="16dp"
+            android:drawableEnd="@drawable/microphone"
+            android:drawableStart="@drawable/search"
+            android:drawablePadding="20dp"
+            android:textColorHint="@color/colorPrimary"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resource"
+            android:layout_margin="18dp"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="5">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            app:tabSelectedTextColor="@color/activeColor"
+            app:tabTextColor="@color/fontColorLight"
+            android:id="@+id/tab_layout">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Articles"
+                android:id="@+id/article_tab"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Books"
+                android:id="@+id/book_tab"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Videos"
+                android:id="@+id/video_tab"/>
+        </com.google.android.material.tabs.TabLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:weightSum="3"
+                android:id="@+id/filter_resource">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Filter"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+               android:textColor="@color/fontColorLight"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:paddingTop="4dp"
+                android:src="@drawable/icons"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager"
+        android:padding="8dp"/>
+
+</LinearLayout>
